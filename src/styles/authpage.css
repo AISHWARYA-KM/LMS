@@ -185,3 +185,44 @@
   margin-bottom: 10px;
   font-size: 1em;
 }
+/* forgotpassword.css */
+.auth-page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.auth-form-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-image-side {
+    flex: 1;
+    background: linear-gradient(to bottom right, #ffffff, #e0f7fa);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.auth-image-side h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}

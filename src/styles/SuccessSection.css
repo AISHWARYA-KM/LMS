@@ -1,0 +1,132 @@
+.success-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+/* Left Side */
+.success-left {
+    background-color: #0f1c2e;
+    color: white;
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.success-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.success-desc {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.video-stack {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.video-img {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.video-img.bottom {
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.video-img.top {
+    top: 0;
+    right: 0;
+    z-index: 20;
+}
+
+.video-img.main {
+    top: 25%;
+    left: 25%;
+    width: 180px;
+    height: 120px;
+    z-index: 30;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #06b6d4;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 40;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Side */
+.success-right {
+    background-color: #dbeafe;
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+.brand-title {
+    font-size: 2rem;
+    color: #0e7490;
+    margin-bottom: 30px;
+}
+
+.brand-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.logo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.video-player {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+}

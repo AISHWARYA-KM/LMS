@@ -4,13 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import axios from 'axios';
 
-axios.post("http://127.0.0.1:8000/api/register/", {
-  username: formData.username,
-  password: formData.password,
-  email: formData.email,
-});
-
-
 function SignupForm() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -57,10 +50,6 @@ function SignupForm() {
       errors.email = 'Please enter a valid email address.';
     }
 
-    if (formData.email === 'baby@gmail.com') {
-      errors.email = 'The email has already been taken.';
-    }
-
     if (!/^\d{10}$/.test(formData.phone)) {
       errors.phone = 'The phone format is invalid.';
     }
@@ -77,7 +66,9 @@ function SignupForm() {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  const getInputClass = (field) => (fieldErrors[field] ? 'input-error' : '');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -97,11 +88,24 @@ function SignupForm() {
       return;
     }
 
-    console.log(formData); // API logic
-    navigate('/login');
-  };
+    try {
+      const res = await axios.post("http://127.0.0.1:8000/api/register/", {
+        username: formData.email,  // use email as username, or use fullName if you prefer
+        password: formData.password,
+        email: formData.email,
+        // Optional fields can be added here if backend accepts them:
+        // phone: formData.phone,
+        // referralCode: formData.referralCode,
+        // accountType: formData.accountType,
+      });
 
-  const getInputClass = (field) => (fieldErrors[field] ? 'input-error' : '');
+      alert("Registration successful!");
+      navigate('/login');
+    } catch (err) {
+      console.error(err);
+      setError("Registration failed. Please try again.");
+    }
+  };
 
   return (
     <form className="signup-form" onSubmit={handleSubmit} noValidate>
