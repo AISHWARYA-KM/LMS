@@ -16,10 +16,10 @@ const instructors = ['Pramod', 'Mani', 'Bharat', 'Kartik'];
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
   const [filters, setFilters] = useState({
-    category: '',
-    level: '',
-    price_type: '',
-    instructor: '',
+    category: [],
+    level: [],
+    price_type: [],
+    instructor: [],
   });
 
   // ✅ Fetch courses from backend whenever filters change
@@ -29,23 +29,22 @@ const CoursesPage = () => {
       try {
         const queryParams = new URLSearchParams();
         Object.entries(filters).forEach(([key, value]) => {
-        if (value) {
-          queryParams.append(key, value);
-        }
+          value.forEach((val) => {
+            queryParams.append(key, val);
+          });
     });
-    const response = await axios.get(`${API_BASE_URL}/api/api/courses/?${queryParams}`);
-;
+    const token = localStorage.getItem('access');
+    const response = await axios.get(`${API_BASE_URL}/api/courses/?${queryParams}`,{
+      headers: { Authorization: `Bearer ${token}` 
+    },
+  });
+
 const processedCourses = response.data.map(course => ({
   ...course,
   price: Number(course.price),
   old_price: Number(course.old_price),
 }));
-setCourses(processedCourses);
-
-
-
-  
-    
+setCourses(processedCourses)
       } catch (error) {
         console.error('Error fetching courses:', error);
       }
@@ -56,11 +55,13 @@ setCourses(processedCourses);
 
   // ✅ Update filter state when radio changes
   const handleFilterChange = (key, value) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: value,
-    }));
-  };
+    setFilters((prev) => {
+      const updated = prev[key].includes(value)
+        ? prev[key].filter((v) => v !== value)
+        : [...prev[key], value];
+      return { ...prev, [key]: updated };
+    });
+  };  
 
   return (
     <div className="landing-root">
@@ -84,8 +85,8 @@ setCourses(processedCourses);
               {categories.map((cat) => (
                 <li key={cat}>
                   <input
-                    type="radio"
-                    name="category"
+                    type="checkbox"
+                    checked={filters.category.includes(cat)}
                     onChange={() => handleFilterChange('category', cat)}
                   />{' '}
                   {cat}
@@ -101,8 +102,8 @@ setCourses(processedCourses);
               {levels.map((level) => (
                 <li key={level}>
                   <input
-                    type="radio"
-                    name="level"
+                    type="checkbox"
+                    checked={filters.level.includes(level)}
                     onChange={() => handleFilterChange('level', level)}
                   />{' '}
                   {level}
@@ -118,8 +119,8 @@ setCourses(processedCourses);
               {prices.map((price) => (
                 <li key={price}>
                   <input
-                    type="radio"
-                    name="price"
+                    type="checkbox"
+                    checked={filters.price_type.includes(price)}
                     onChange={() => handleFilterChange('price_type', price)}
                   />{' '}
                   {price}
@@ -135,8 +136,8 @@ setCourses(processedCourses);
               {instructors.map((instructor) => (
                 <li key={instructor}>
                   <input
-                    type="radio"
-                    name="instructor"
+                    type="checkbox"
+                    checked={filters.instructor.includes(instructor)}
                     onChange={() => handleFilterChange('instructor', instructor)}
                   />{' '}
                   {instructor}
@@ -148,6 +149,12 @@ setCourses(processedCourses);
 
         <div className="courses-list">
           <h2>{courses.length} Course{courses.length !== 1 ? 's' : ''} found</h2>
+          {localStorage.getItem("accountType") === "organization" && (
+    <div style={{ textAlign: 'right', marginBottom: '1rem' }}>
+      <Link to="/courses/add" className="btn btn-primary">➕ Add New Course</Link>
+    </div>
+  )}
+
           <div className="courses-grid">
             {courses.map((course) => (
               <div className="course-card" key={course.id}>

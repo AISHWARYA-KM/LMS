@@ -1580,7 +1580,7 @@ transition: color 0.3s ease;
 }
 
 .footer-top ul li:hover {
-color: #a13eff;
+color: #583eff;
 }
 
 .subscribe-box {
@@ -1598,7 +1598,7 @@ color: #000;
 }
 
 .subscribe-box button {
-background-color: #a13eff;
+background-color: #3e78ff;
 color: white;
 padding: 12px 18px;
 border: none;
@@ -1669,7 +1669,7 @@ font-size: 14px;
 }
 
 .subscribe button {
-background: #a13eff;
+background: #6262c0;
 color: #fff;
 border: none;
 padding: 10px 16px;
@@ -1679,12 +1679,12 @@ cursor: pointer;
 }
 
 .subscribe button:hover {
-background-color: #8513e6;
+background-color: #404961;
 }
 
 /* Footer Bottom */
 .footer-bottom {
-background: linear-gradient(to right, #a13eff, #6d2bcb);
+background: linear-gradient(to right, #6c77da, #314dd6);
 padding: 40px 20px;
 }
 
@@ -1824,4 +1824,41 @@ background-color: #a13eff;
 .floating-buttons .scroll-top:hover {
 background-color: #8513e6;
 }
+.profile-section {
+    position: relative;
+    margin-left: auto;
+    margin-right: 2rem;
+}
 
+.user-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    width: 220px;
+}
+
+.dropdown p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.logout-btn {
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}

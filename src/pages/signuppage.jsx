@@ -9,7 +9,7 @@ function SignupPage() {
         <SignupForm />
       </div>
       <div className="info-section">
-        <h1>Welcome to Infix Learning Management System</h1>
+        <h1>Welcome to NammaQa Learning Management System</h1>
         <img
           src={signup}
           alt="student"

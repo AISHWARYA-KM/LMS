@@ -18,6 +18,8 @@ import avatar4 from '../assets/avatar4.png';
 import  QuizzesSection  from "./quiz";
 import SuccessSection from './SuccessSection';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
+
 import {
   FaBookOpen,
   FaUserFriends,
@@ -36,13 +38,24 @@ import { useInView } from 'react-intersection-observer';
 const LandingHero = () => {
   const [stats, setStats] = useState({ courses: 0, students: 0, countries: 0, feedback: 0 });
   const [ref, inView] = useInView({ triggerOnce: true });
+  const navigate = useNavigate();
 
+  // Redirect admin users to admin dashboard
+  useEffect(() => {
+    const accountType = localStorage.getItem('accountType');
+    if (accountType === 'admin') {
+      navigate('/admin-dashboard');
+    }
+  }, []);
+
+  // Fetch stats for landing
   useEffect(() => {
     fetch('/api/stats')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(err => console.error('Failed to fetch stats', err));
   }, []);
+
 
   const categories = [
     { name: 'Laravel', courses: 1, icon: <FaChartBar /> },
@@ -185,7 +198,7 @@ const LandingHero = () => {
           <Link to="/quiz" className="landing-nav-link">Quiz</Link>
           <Link to="/classes" className="landing-nav-link">Classes</Link>
           <Link to="/others" className="landing-nav-link">Others</Link>
-          <Link to="/addons" className="landing-nav-link">Addons</Link>
+          <Link to="/my-courses" className="landing-nav-link">MyCourses</Link>
         </nav>
       </header>
 

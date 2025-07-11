@@ -1,0 +1,67 @@
+.add-course-blended-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #f5f7fa;
+}
+
+.add-course-blended-left {
+    flex: 1;
+    background: linear-gradient(to bottom right, #0a1f44, #0f3c77);
+    clip-path: ellipse(80% 100% at 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+}
+
+.quote-text {
+    max-width: 300px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    justify-content:left ;
+}
+
+.add-course-blended-right {
+    flex: 1.5;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.add-course-blended-right form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-course-blended-right input,
+.add-course-blended-right select,
+.add-course-blended-right textarea {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.add-course-blended-right button {
+    padding: 14px;
+    font-size: 16px;
+    background-color: #153294;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-course-blended-right button:hover {
+    background-color: #376ecc;
+}

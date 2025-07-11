@@ -1,0 +1,38 @@
+.assigned-courses-container {
+    padding: 2rem;
+    background: #f9f9f9;
+    min-height: 100vh;
+}
+
+.assigned-courses-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.assigned-courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.assigned-courses-table th,
+.assigned-courses-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.assigned-courses-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.assigned-courses-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.assigned-courses-table tr:hover {
+    background-color: #f1f1f1;
+}

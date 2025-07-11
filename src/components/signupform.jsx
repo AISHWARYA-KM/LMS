@@ -12,7 +12,6 @@ function SignupForm() {
     password: '',
     confirmPassword: '',
     referralCode: '',
-    accountType: 'student',
   });
 
   const [agreed, setAgreed] = useState(false);
@@ -90,51 +89,36 @@ function SignupForm() {
 
     try {
       const res = await axios.post("http://127.0.0.1:8000/api/register/", {
-        username: formData.email,  // use email as username, or use fullName if you prefer
+        username: formData.fullName,  // use email as username, or use fullName if you prefer
         password: formData.password,
         email: formData.email,
-        // Optional fields can be added here if backend accepts them:
-        // phone: formData.phone,
-        // referralCode: formData.referralCode,
-        // accountType: formData.accountType,
+        phone: formData.phone,
+        referral_code: formData.referralCode,
       });
-
       alert("Registration successful!");
       navigate('/login');
     } catch (err) {
       console.error(err);
-      setError("Registration failed. Please try again.");
+      if (err.response && err.response.status === 400) {
+        const errorData = err.response.data;
+        if (errorData.username) {
+          setError(errorData.username[0]);
+        } else if (errorData.email) {
+          setError(errorData.email[0]);
+        } else {
+          setError("Registration failed. Please check the form.");
+        }
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
     }
-  };
+  }
+ 
 
   return (
     <form className="signup-form" onSubmit={handleSubmit} noValidate>
       <img src={logo} alt="Infix Logo" className="logo" />
       <h2>Sign Up Details</h2>
-
-      <div className="radio-group">
-        <label>
-          <input
-            type="radio"
-            name="accountType"
-            value="student"
-            checked={formData.accountType === 'student'}
-            onChange={handleChange}
-          />
-          Student
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="accountType"
-            value="organization"
-            checked={formData.accountType === 'organization'}
-            onChange={handleChange}
-          />
-          Organization
-        </label>
-      </div>
-
       {requiredFields.map((field) => (
         <div key={field.name}>
           <input

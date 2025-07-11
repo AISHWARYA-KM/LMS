@@ -12,7 +12,7 @@ const LoginPage = () => {
       </div>
 
       <div className="info-section">
-        <h1>Welcome to Infix Learning Management System</h1>
+        <h1>Welcome to NammaQa Learning Management System</h1>
         <img src={illustration} alt="Illustration" className="info-image"/>
       </div>
     </div>
