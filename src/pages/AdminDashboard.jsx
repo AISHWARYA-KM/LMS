@@ -20,6 +20,8 @@ const AdminDashboard = () => {
           <Link to="/admin/assign-course" className={location.pathname === "/admin/assign-course" ? "active" : ""}>Assign Courses</Link>
           <Link to="/admin/assigned-courses" className={location.pathname === "/admin/assigned-courses" ? "active" : ""}>View Assigned Courses</Link>
           <Link to="/admin/manage-users" className={location.pathname === "/admin/manage-users" ? "active" : ""}>Manage Users</Link>
+          <Link to="/admin/create-organization" className={location.pathname === "/admin/create-organization" ? "active" : ""}>Create Organization</Link>
+          <Link to="/login" className="logout-link">Logout</Link>
 
         </nav>
       </header>

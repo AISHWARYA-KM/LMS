@@ -94,6 +94,7 @@ function SignupForm() {
         email: formData.email,
         phone: formData.phone,
         referral_code: formData.referralCode,
+        role:'student',  // Default role for signup
       });
       alert("Registration successful!");
       navigate('/login');
@@ -105,7 +106,9 @@ function SignupForm() {
           setError(errorData.username[0]);
         } else if (errorData.email) {
           setError(errorData.email[0]);
-        } else {
+        } else if(typeof errorData === 'string') {
+          setError(errorData);
+        }else {
           setError("Registration failed. Please check the form.");
         }
       } else {

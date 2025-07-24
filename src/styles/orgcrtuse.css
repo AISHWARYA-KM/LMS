@@ -1,0 +1,83 @@
+/* Container for the form */
+.org-user-form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    animation: fadeInUp 0.4s ease-out;
+    box-sizing: border-box;
+}
+
+/* Form title styling */
+.org-user-form-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Common input field class */
+.org-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Input focus effect */
+.org-input:focus {
+    border-color: #40536b;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Submit button */
+.org-user-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #40536b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.org-user-form button:hover {
+    background-color: #2c3e50;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 600px) {
+    .org-user-form-container {
+        padding: 20px;
+        margin: 30px 15px;
+    }
+
+    .org-user-form-title {
+        font-size: 1.4rem;
+    }
+}

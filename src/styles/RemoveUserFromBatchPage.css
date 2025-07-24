@@ -1,0 +1,111 @@
+.batch-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 20px;
+}
+
+
+.remove-user-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.remove-user-container h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.batch-box {
+    border: 1px solid #ddd;
+    border-left: 5px solid #355fdc;
+    background-color: #fcfcff;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.batch-box:hover {
+    transform: translateY(-2px);
+}
+
+.batch-box h3 {
+    font-size: 1.4rem;
+    color: #3535dc;
+    margin-bottom: 10px;
+}
+
+.user-list {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.user-item {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-item span {
+    font-size: 1rem;
+    color: #333;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+    background-color: #4923c8;
+}
+
+.remove-btn:active {
+    transform: scale(0.98);
+}
+
+.message-success {
+    color: #28a745;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.text-muted {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .batch-box {
+        padding: 18px;
+    }
+
+    .user-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .remove-btn {
+        align-self: flex-end;
+    }
+}

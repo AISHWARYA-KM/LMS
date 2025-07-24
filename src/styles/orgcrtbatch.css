@@ -1,0 +1,71 @@
+/* Batch creation form styling */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, #eef2f3, #ffffff);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.form-container input:focus {
+    border-color: #40536b;
+    background-color: #fff;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #40536b;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #2c3e50;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

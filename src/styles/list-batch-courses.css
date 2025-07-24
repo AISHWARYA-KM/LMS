@@ -1,0 +1,87 @@
+.batch-courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.batch-courses-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.error-text,
+.empty-text {
+    text-align: center;
+    font-size: 1rem;
+    color: red;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* 🔥 Responsive grid layout for batch cards */
+.batch-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* 🧾 Individual batch card */
+.batch-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.batch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Batch title */
+.batch-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 1rem 0;
+}
+
+/* Course list */
+.course-list {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.course-item {
+    margin-bottom: 0.4rem;
+}
+
+/* No courses message */
+.no-courses {
+    font-style: italic;
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .batch-courses-container {
+        padding: 1.5rem;
+    }
+
+    .batch-list {
+        grid-template-columns: 1fr;
+    }
+}

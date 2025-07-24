@@ -1,0 +1,190 @@
+.org-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Style */
+.org-sidebar {
+    width: 250px;
+    background: white;
+    /* Light tone matching logo background */
+    color: #333;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo container */
+.org-logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.org-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* Sidebar Links */
+.org-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.org-sidebar nav ul li {
+    margin-bottom: 12px;
+}
+
+.org-sidebar nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.org-sidebar nav ul li a:hover {
+    background-color: #e0e0e0;
+}
+
+.org-sidebar nav ul li a.active {
+    background-color: #40536b;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main Content */
+.org-main-content {
+    flex: 1;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #090c2b;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Hero Layout */
+.hero-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 60px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    /* Overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Typing effect */
+.typing-line1,
+.typing-line2 {
+    font-size: 3rem;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation-fill-mode: forwards;
+}
+
+.typing-line1 {
+    animation: typing1 2s steps(20, end) forwards;
+    margin-bottom: 10px;
+    /* reduced gap */
+}
+
+.typing-line2 {
+    animation: typing2 2s steps(30, end) forwards;
+    animation-delay: 2.2s;
+    margin-bottom: 0;
+}
+
+.hero-subtext {
+    font-size: 1rem;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeInText 1s ease forwards;
+    animation-delay: 4.5s;
+}
+
+/* Hero Image */
+.hero-image {
+    flex: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    opacity: 1;
+}
+
+
+/* Keyframes */
+
+@keyframes typing1 {
+    0% {
+        width: 0;
+        border-right: 2px solid #fff;
+    }
+
+    99% {
+        border-right: 2px solid #fff;
+    }
+
+    100% {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+@keyframes typing2 {
+    0% {
+        width: 0;
+        border-right: 2px solid #fff;
+    }
+
+    99% {
+        border-right: 2px solid #fff;
+    }
+
+    100% {
+        width: 100%;
+        border-right: none;
+    }
+}
+@keyframes fadeInText {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}

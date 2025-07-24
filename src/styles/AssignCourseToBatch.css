@@ -1,0 +1,86 @@
+.assign-course-container {
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 520px;
+    margin: 60px auto;
+    animation: fadeIn 0.5s ease;
+}
+
+.assign-course-container h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.assign-course-container label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.assign-course-container select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.3s ease;
+}
+
+.assign-course-container select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    outline: none;
+}
+
+.assign-course-container button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.assign-course-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.assign-course-container button:active {
+    transform: translateY(1px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Responsive */
+@media (max-width: 600px) {
+    .assign-course-container {
+        padding: 30px 20px;
+    }
+
+    .assign-course-container h2 {
+        font-size: 1.5rem;
+    }
+}

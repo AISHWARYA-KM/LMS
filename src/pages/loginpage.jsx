@@ -1,4 +1,4 @@
-// src/pages/LoginPage.jsx
+// LoginPage.jsx
 import React from 'react';
 import LoginForm from '../components/loginform';
 import illustration from '../assets/signup.png';
@@ -13,7 +13,7 @@ const LoginPage = () => {
 
       <div className="info-section">
         <h1>Welcome to NammaQa Learning Management System</h1>
-        <img src={illustration} alt="Illustration" className="info-image"/>
+        <img src={illustration} alt="Illustration" className="info-image" />
       </div>
     </div>
   );

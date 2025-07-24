@@ -1,0 +1,81 @@
+.batch-users-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.batch-users-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.no-data-text,
+.batch-users-container p {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* ✅ Grid layout for batches */
+.batch-users-container>div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* ✅ Batch card style */
+.batch-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.batch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Batch title */
+.batch-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* User list */
+.batch-card ul {
+    padding-left: 1.2rem;
+    list-style: none;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.batch-card li {
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.batch-card li::before {
+    content: '👤';
+    margin-right: 0.5rem;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .batch-users-container>div {
+        grid-template-columns: 1fr;
+    }
+}
